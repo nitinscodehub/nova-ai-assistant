@@ -1,0 +1,7 @@
+{
+  "assistant_name": "Nova",
+  "voice_rate": 175,
+  "language": "en-IN",
+  "mode": "auto",
+  "openai_key": ""
+}

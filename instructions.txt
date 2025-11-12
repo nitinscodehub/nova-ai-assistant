@@ -1,0 +1,159 @@
+==========================================
+Nova AI Assistant - Instructions
+==========================================
+
+📦 INSTALLATION
+---------------
+
+Linux (Kali/Debian):
+  bash setup.sh
+
+Windows:
+  1. Install Python 3.10+ from python.org
+  2. Open Command Prompt in project folder
+  3. python -m venv venv
+  4. venv\Scripts\activate
+  5. pip install -r requirements.txt
+
+🚀 HOW TO RUN
+-------------
+
+Single command:
+  python3 main.py
+
+Or activate virtual environment first:
+  source venv/bin/activate  (Linux)
+  venv\Scripts\activate     (Windows)
+  python3 main.py
+
+🎤 VOICE COMMANDS
+-----------------
+
+1. Click "🎙️ Listen" button
+2. Say "Hey Nova" followed by your command:
+   - "Hey Nova, open Firefox"
+   - "Hey Nova, search the web for Cyber Security news"
+   - "Hey Nova, generate Python code for bubble sort"
+   - "Hey Nova, system info"
+
+💬 TEXT COMMANDS
+----------------
+
+Type in the text field and press Enter:
+  - "Find file named main.py"
+  - "Generate Python code for calculator"
+  - "System information"
+  - "Help"
+
+💻 CODE GENERATION & EXECUTION
+-------------------------------
+
+1. Ask for code:
+   - "Generate a Python program for calculator"
+   - "Give me code for bubble sort"
+   - "Create a hello world program"
+
+2. Code will appear in chat with "▶️ Run Code" button
+
+3. Click "▶️ Run Code" to execute
+
+4. Output will appear below the code
+
+⚙️ OFFLINE/ONLINE MODE
+-----------------------
+
+Offline Mode:
+  - Uses Vosk for speech recognition (local)
+  - Uses pyttsx3 for TTS (local)
+  - Rule-based responses (no internet needed)
+
+Online Mode:
+  - Uses Google Speech API
+  - Uses OpenAI API for ChatGPT-like responses (if API key set)
+  - Requires internet connection
+
+Auto Mode (default):
+  - Tries online first, falls back to offline
+  - Best of both worlds
+
+🔧 SETTINGS
+-----------
+
+Click "⚙️ Settings" button to:
+  - Set OpenAI API key (for ChatGPT-like responses)
+  - Configure voice settings
+  - Change mode (offline/online/auto)
+
+OpenAI API Key:
+  - Get from: https://platform.openai.com/api-keys
+  - Optional - works without it
+  - Enables natural language responses
+
+📝 FEATURES
+-----------
+
+✅ Voice + Text hybrid input
+✅ Natural language understanding
+✅ Code generation and execution
+✅ Animated robot avatar
+✅ Chat interface with message bubbles
+✅ Auto-resume on interruption
+✅ Self-repair on errors
+✅ Offline/Online mode switching
+✅ Conversation context (last 3 messages)
+✅ Human-like responses (Hinglish + English)
+
+🐛 TROUBLESHOOTING
+------------------
+
+GUI doesn't start:
+  - Check Tkinter: python3 -c "import tkinter"
+  - Linux: sudo apt-get install python3-tk
+
+Voice not working:
+  - Check microphone permissions
+  - Test mic: arecord -d 5 test.wav
+  - Check audio system
+
+Code execution fails:
+  - Check Python version (3.10+)
+  - Verify code syntax
+  - Check logs/assistant.log
+
+OpenAI errors:
+  - Verify API key in settings
+  - Check internet connection
+  - Falls back to rule-based automatically
+
+📁 FILE STRUCTURE
+-----------------
+
+nova_assistant/
+├── main.py              # Main entry point
+├── ui.py                # GUI interface
+├── speech_engine.py      # Voice input/output
+├── ai_engine.py          # AI responses
+├── code_executor.py      # Code execution
+├── error_handler.py      # Auto-repair
+├── config.py             # Configuration
+├── assets/               # Robot animations (optional)
+├── logs/                 # Log files
+├── settings.json         # User settings
+├── requirements.txt      # Dependencies
+├── setup.sh              # Setup script
+└── instructions.txt      # This file
+
+📞 SUPPORT
+----------
+
+Check logs/assistant.log for detailed error messages.
+
+For issues:
+  1. Check logs/assistant.log
+  2. Verify all dependencies installed
+  3. Test individual components
+  4. Check Python version (3.10+)
+
+==========================================
+Enjoy using Nova AI Assistant! 💫
+==========================================
