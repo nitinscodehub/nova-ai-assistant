@@ -1,174 +1,171 @@
-# Nova AI Assistant - Kali Linux Edition
+Nova AI Assistant – Kali Linux Edition
 
-A complete Windows-like Basic AI Assistant for Kali Linux, featuring both offline and online modes with voice recognition, text-to-speech, file search, task automation, web search, and calendar/reminder functionality.
+Developed by Nitin Dhurve
 
-## 🚀 Features
+🧠 A complete Windows-like Basic AI Assistant built specially for Kali Linux, featuring offline + online modes, voice recognition, text-to-speech, task automation, and more.
 
-- **🎤 Human-like Voice Conversation**: Natural speech recognition and text-to-speech
-- **📁 File Search**: Search files in local directories using voice commands
-- **⚙️ Task Automation**: Open applications, create folders, check WiFi, take screenshots
-- **🌐 Web Search**: Search the web using DuckDuckGo (online mode)
-- **📅 Calendar & Reminders**: Manage reminders with SQLite database
-- **🔌 Offline & Online Modes**: Works offline with Vosk or online with Google Speech API
-- **🛠️ Self-Error Resolution**: Auto-installs missing packages
-- **⚙️ Configurable**: Customize settings via settings.json
+🚀 Features
 
-## 📋 Requirements
+🎤 Human-like Voice Conversation – Realistic speech recognition & TTS
 
-- **Windows 10/11**, **Linux** (Kali Linux, Debian-based), or **macOS**
-- Python 3.10+
-- Microphone (for voice input)
-- Internet connection (for first-time setup and online mode)
+📁 File Search – Search files in directories with voice commands
 
-## 🔧 Installation
+⚙️ Task Automation – Open apps, check WiFi, take screenshots, etc.
 
-### Windows Installation
+🌐 Web Search – Online browsing via DuckDuckGo
 
-```cmd
-# Quick Install
+📅 Calendar & Reminders – Smart reminder system with SQLite
+
+🔌 Offline + Online Modes – Switch anytime
+
+🛠️ Self-Error Resolution – Auto-install missing dependencies
+
+⚙️ Fully Configurable – Modify settings in settings.json
+
+🧩 Requirements
+
+Kali Linux, Debian, Windows 10/11, or macOS
+
+Python 3.10+
+
+Microphone
+
+Internet (for online mode)
+
+⚙️ Installation
+🔸 Linux (Kali)
+chmod +x setup.sh
+./setup.sh
+# Manual setup
+sudo apt-get update
+sudo apt-get install -y python3 python3-pip portaudio19-dev python3-pyaudio
+sudo apt-get install -y espeak espeak-data libespeak1 libespeak-dev ffmpeg libasound2-dev
+pip3 install -r requirements.txt
+
+🔹 Windows
 setup_windows.bat
-
-# Manual Install
+# Manual install
 python -m venv venv
 venv\Scripts\activate.bat
 pip install -r requirements.txt
 pip install pillow pyautogui
-```
 
-### Linux Installation
-
-```bash
-# Quick Install
-chmod +x setup.sh
-./setup.sh
-
-# Manual Install
-sudo apt-get update
-sudo apt-get install -y python3 python3-pip portaudio19-dev python3-pyaudio
-sudo apt-get install -y espeak espeak-data libespeak1 libespeak-dev
-sudo apt-get install -y ffmpeg libasound2-dev
-pip3 install -r requirements.txt
-```
-
-### macOS Installation
-
-```bash
-# Install dependencies
+🔸 macOS
 brew install python3 portaudio
-
-# Install Python packages
 pip3 install -r requirements.txt
-```
 
-## 🎯 Usage
+▶️ Usage
+Start Assistant
 
-### Start the Assistant
+Windows:
 
-**Windows:**
-```cmd
 start_windows.bat
-# Or manually
+# or
 venv\Scripts\activate.bat
 python main.py
-```
 
-**Linux/macOS:**
-```bash
+
+Linux/macOS:
+
 ./start.sh
-# Or manually
+# or
 python3 main.py
-```
 
-### Voice Commands
+🗣️ Example Commands
+Command	Action
+“Find file named notes.txt”	Search file
+“Open Firefox”	Launch app
+“Create folder named Projects”	Make directory
+“Search the web for Python tutorials”	Web search
+“Remind me tomorrow 10 AM to attend meeting”	Add reminder
+“Show system information”	Display system info
+“Take screenshot”	Capture screen
+“Switch to online mode”	Change speech mode
+⚙️ Configuration
 
-- **File Search**: "Find file named example.txt"
-- **Open Apps**: "Open Firefox"
-- **Create Folders**: "Create folder named Projects"
-- **Web Search**: "Search the web for Python tutorials"
-- **Reminders**: "Remind me tomorrow at 10 AM to attend meeting"
-- **System Info**: "Show system information"
-- **WiFi Check**: "Check WiFi"
-- **Screenshot**: "Take screenshot"
-- **Mode Switch**: "Switch to online mode" or "Switch to offline mode"
+Edit settings.json to customize:
 
-### Configuration
+{
+  "mode": "offline",
+  "voice_type": "female",
+  "voice_speed": 160,
+  "wake_word": "nova"
+}
 
-Edit `settings.json` to customize:
-
-- **Mode**: "offline" or "online"
-- **Voice Type**: "male" or "female"
-- **Voice Speed**: 100-200
-- **Wake Word**: Default is "nova"
-
-## 📁 Project Structure
-
-```
+📂 Project Structure
 nova project/
-├── main.py                      # Main entry point
-├── assistant.py                 # Main assistant class
-├── config.py                    # Configuration manager
-├── speech_recognition_module.py # Speech recognition
-├── tts_module.py                # Text-to-speech
-├── file_search.py               # File search functionality
-├── task_automation.py           # OS-level automation
-├── web_search.py                # Web search (DuckDuckGo)
-├── calendar_reminder.py         # Reminders & calendar
-├── error_handler.py             # Auto-install & error handling
-├── settings.json                # Configuration file
-├── requirements.txt             # Python dependencies
-├── setup.sh                     # Setup script
-├── start.sh                     # Start script
-└── instructions.txt             # Detailed instructions
-```
+├── main.py
+├── assistant.py
+├── config.py
+├── speech_recognition_module.py
+├── tts_module.py
+├── file_search.py
+├── task_automation.py
+├── web_search.py
+├── calendar_reminder.py
+├── error_handler.py
+├── settings.json
+├── setup.sh
+├── start.sh
+├── requirements.txt
+└── instructions.txt
 
-## 🎤 Modes
+🎛️ Modes
+🔸 Offline Mode
 
-### Offline Mode (Default)
+Uses Vosk + pyttsx3
 
-- Uses Vosk for speech recognition
-- Uses pyttsx3 for text-to-speech
-- No internet required
-- Works for file search, task automation, reminders
+No internet needed
 
-### Online Mode
+Works for: File search, reminders, system tasks
 
-- Uses Google Speech API for better accuracy
-- Web search available
-- Requires internet connection
-- Better speech recognition
+🔹 Online Mode
 
-## 🐛 Troubleshooting
+Uses Google Speech API
 
-### Microphone not working
-```bash
+Requires internet
+
+Best accuracy & response
+
+🧠 Self-Fix & Error Handling
+
+Nova checks for missing libraries or mic errors and auto-fixes them.
+If something breaks → restart with:
+
+python3 main.py --repair
+
+🐛 Troubleshooting
+
+Microphone not working:
+
 sudo apt-get install portaudio19-dev python3-pyaudio
-arecord -d 5 test.wav  # Test microphone
-```
+arecord -d 5 test.wav
 
-### Speech recognition not accurate
-- Switch to online mode for better accuracy
-- Speak clearly and reduce background noise
-- Check internet connection (for online mode)
 
-### TTS not working
-```bash
+TTS not working:
+
 sudo apt-get install espeak espeak-data
-espeak "test"  # Test TTS
-```
+espeak "test"
 
-## 📝 License
 
-This project is open source and available for personal and educational use.
+Speech not accurate:
 
-## 🤝 Contributing
+Use online mode
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Reduce noise
 
-## 📞 Support
+Speak clearly
 
-For issues and questions, please check `instructions.txt` for detailed documentation.
+📝 License
 
----
+Open Source — Free for educational and personal use.
 
-**Enjoy using Nova AI Assistant! 🚀**
+🤝 Author & Credits
 
+👨‍💻 Developed by Nitin Dhurve
+
+💬 Project Repo: Nova AI Assistant – Kali Edition
+
+❤️ Support
+
+For detailed setup or help, check instructions.txt in the repo.
